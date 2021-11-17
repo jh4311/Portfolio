@@ -3,6 +3,8 @@ class Portfolio:
         self._stocks = []
     
     def buy(self, name, shares, price):
+        if shares <= 0:
+            raise ValueError("Shares cannot be negative!")
         self._stocks.append((name, shares, price))
 
     def cost(self):
